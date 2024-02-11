@@ -1,0 +1,13 @@
+<ul id="postsList">
+    <% if (locals.post) { %>
+        <h2>
+            <%=post.title%>
+        </h2>
+        <h4>
+            <%=post.content%>
+        </h4>
+        <small>
+            Author: <%=post.author%>
+
+        </small>
+        <% } %>
