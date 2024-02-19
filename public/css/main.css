@@ -1,5 +1,9 @@
 /* Importing Google font - Fira Sans */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap');
+/* 
+@font-face { font-family: CircularStd; src: url('CircularStd.ttf'); } 
+@font-face { font-family: CircularStd; font-weight: bold; src: url('Circular-Std.ttf');}
+ */
 
 * {
     margin: 0;
@@ -329,10 +333,19 @@ header .navbar {
     height: auto;
 }
 
+span {
+    left: 224px;
+    top: 40px;
+}
+
 
 
 
 /* Section 1 */
+
+.centre {
+    margin-left: 60px;
+}
 
 .postsList {
     list-style: none;
@@ -351,10 +364,23 @@ header .navbar {
 .head {
     font-size: large;
     font-weight: 700;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.div-content {
+    min-height: 138px;
+    margin-bottom: 25px;
 }
 
 .content {
     font-size: medium;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .author {
@@ -369,7 +395,32 @@ header .navbar {
     text-align: right;
 }
 
+.a {
+    width: 368px;
+    margin: 20px 15px;
+    text-decoration: none;
+    color: black;
+    box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .07), 0 1px 18px rgba(0, 0, 0, .05);
+}
 
+/* a:visited {
+    color: green;
+} */
+
+.mainLink {
+    padding: 0;
+}
+
+.txt_sec {
+    width: -webkit-fill-available;
+    padding: 0 12px;
+}
+
+.btm {
+    position: relative;
+    top: 43px;
+
+}
 
 /* Responsive Section */
 
@@ -432,6 +483,8 @@ header .navbar {
 
     .navbar :is(#close-menu-btn, #hamburger-btn) {
         display: inline-block;
+        left: 224px;
+        top: 40px;
     }
 
 

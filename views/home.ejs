@@ -34,7 +34,6 @@
             <div class="navbar-div1">
                 <ul class="menu-links">
                     <li><a href="#">Home</a></li>
-                    <!-- <li><a href="/Avalibility">Avalibility</a></li> -->
                     <li><a href="#">About us</a></li>
                     <li><a href="#">Contact us</a></li>
                     <span id="close-menu-btn" class="material-symbols-outlined">close</span>
@@ -51,48 +50,45 @@
 
     </header>
 
+    <!-- Section 1 content -->
 
-    <!-- <div class="container">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-          <div class="col">Column</div>
-          <div class="col">Column</div>
-          <div class="col">Column</div>
-          <div class="col">Column</div>
-        </div>
-      </div> -->
-
-
-    <div class="container">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4">
-            <% Posts.forEach(post=> { %>
-                <a href="/readMore/<%=post._id%>">
-                    <div class="col">
-                        <div class="img_sec">
-                            <img class="img1" src="../images/Sc1.png" alt="Sc1.png">
-                        </div>
-                        <div class="txt_sec">
-                            <p class="head">
-                                <%=post.title%>
-                            </p>
-                            <p class="content">
-                                <%=post.content%>
-                            </p>
-                            <div class="row">
-                                <p class="author">
-                                    <%=post.author%>
-                                </p>
-                                <p class="date">
-                                    <%= post.createdAt %>
-                                </p>
+    <section>
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 centre">
+                <% Blogs.forEach(blog=> { %>
+                    <a class="mainLink a" href="/readMore/<%=blog._id%>">
+                        <div class="col">
+                            <div class="img_sec">
+                                <img class="img1" src="../images/Sc1.png" alt="Sc1.png">
+                            </div>
+                            <div class="txt_sec">
+                                <div class="div-content">
+                                    <p class="head">
+                                        <%=blog.title%>
+                                    </p>
+                                    <p class="content">
+                                        <%=blog.content%>
+                                    </p>
+                                </div>
+                                <div class="row ">
+                                    <p class="author">
+                                        <%=blog.author%>
+                                    </p>
+                                    <p class="date">
+                                        <%= blog.createdAt %>
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
 
-                <% }); %>
+                    <% }); %>
 
+
+            </div>
         </div>
-    </div>
+    </section>
+
 
 
 
@@ -109,6 +105,9 @@
 
     // Close mobile menu on close button click
     closeMenuBtn.addEventListener("click", () => hamburgerBtn.click());
+
+
+
 </script>
 
 </html>

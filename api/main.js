@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 
 
-const PostData = require('../models/Post')
+const BlogData = require('../models/Blog')
 
 const app = express()
 const masterKey = "123456789"
@@ -12,14 +12,14 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
 
-// Post
+// Blog
 
-app.get('/Post', async (req, res) => {
+app.get('/Blog', async (req, res) => {
     const userKey = (req.query.key)
     if (userKey === masterKey) {
         try {
-            const postData = await PostData.find();
-            res.status(200).json(postData);
+            const blogData = await BlogData.find();
+            res.status(200).json(blogData);``
         } catch (error) {
             res.status(500).json({ message: error.message })
         }
@@ -31,11 +31,11 @@ app.get('/Post', async (req, res) => {
     }
 
 })
-app.get('/Post/:id', async (req, res) => {
+app.get('/Blog/:id', async (req, res) => {
     try {
         const { id } = req.params;
-        const postData = await PostData.findById(id);
-        res.status(200).json(postData);
+        const blogData = await BlogData.findById(id);
+        res.status(200).json(blogData);
     } catch (error) {
         res.status(500).json({ message: error.message })
     }
@@ -45,41 +45,41 @@ app.get('/Post/:id', async (req, res) => {
 app.get('/Data/:id', async (req, res) => {
     try {
         const { id } = req.params;
-        const postData = await PostData.findById(id);
-        res.status(200).json(postData);
+        const blogData = await BlogData.findById(id);
+        res.status(200).json(blogData);
     } catch (error) {
         res.status(500).json({ message: error.message })
     }
 })
 
 
-app.post('/Posts', async (req, res) => {
+app.post('/Blog', async (req, res) => {
     try {
-        const Post = await PostData.create({
+        const Blog = await BlogData.create({
             title: req.body.title,
             content: req.body.content,
             author: req.body.author
         });
         // res.redirect("/products");
-        res.status(201).json(Post);
+        res.status(201).json(Blog);
     } catch (error) {
         console.log(error);
     }
 })
 
 // update a Data
-app.patch('/Post/:id', async (req, res) => {
+app.patch('/Blog/:id', async (req, res) => {
     try {
         const { id } = req.params;
-        const postData = await PostData.findByIdAndUpdate(id, req.body);
+        const blogData = await BlogData.findByIdAndUpdate(id, req.body);
         // we cannot find any product in database
-        if (!postData) return res.status(404).json({ message: `cannot find any product with ID ${id}` })
+        if (!blogData) return res.status(404).json({ message: `cannot find any product with ID ${id}` })
 
-        if (req.body.title) postData.title = req.body.title;
-        if (req.body.content) postData.content = req.body.content;
-        if (req.body.author) postData.author = req.body.author;
+        if (req.body.title) blogData.title = req.body.title;
+        if (req.body.content) blogData.content = req.body.content;
+        if (req.body.author) blogData.author = req.body.author;
 
-        res.status(200).json(postData);
+        res.status(200).json(blogData);
 
     } catch (error) {
         res.status(500).json({ message: "Server error" })
@@ -89,18 +89,18 @@ app.patch('/Post/:id', async (req, res) => {
 
 // delete a product
 
-app.delete('/Post/:id', async (req, res) => {
+app.delete('/Blog/:id', async (req, res) => {
     const userKey = (req.query.key)
     if (userKey === masterKey) {
 
         try {
             const userKey = (req.query.key)
             const { id } = req.params;
-            const postData = await PostData.findByIdAndDelete(id);
-            if (!postData) {
+            const blogData = await BlogData.findByIdAndDelete(id);
+            if (!blogData) {
                 return res.status(404).json({ message: `cannot find any Parking Data with ID ${id}` })
             }
-            res.status(200).json(postData);
+            res.status(200).json(blogData);
 
         }
         catch (error) {
