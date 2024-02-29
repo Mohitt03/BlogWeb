@@ -13,18 +13,20 @@
         <h1>
             <%= heading %>
         </h1>
-        <% if (locals.post) { %>
-            <form id="editForm" method="post" action="/api/Posts/<%=post._id%>">
-                <input type="text" name="title" value="<%=post.title %>">
-                <textarea name="content" rows="10"><%=post.content %></textarea>
-                <input type="text" name="author" value="<%=post.author %>">
+        <% if (locals.Blogs) { %>
+            <form id="editForm" method="post" action="/api/Blog/<%=Blogs._id%>">
+                <input type="text" name="title" value="<%=Blogs.title %>">
+                <input type="text" name="img" value="<%=Blogs.img %>">
+                <textarea name="content" rows="10"><%=Blogs.content %></textarea>
+                <input type="text" name="author" value="<%=Blogs.author %>">
                 <button class="full-width" type="submit">
                     <%= submit %>
                 </button>
             </form>
             <% } else {%>
-                <form id="newPostForm" method="post" action="/Posts">
+                <form id="newPostForm" method="post" action="/Blog">
                     <input type="text" name="title" placeholder="title" required>
+                    <input type="text" name="img" placeholder="Img src">
                     <textarea name="content" placeholder="Content" required rows="10"></textarea>
                     <input type="text" name="author" placeholder="Author" required>
                     <button class="full-width" type="submit">

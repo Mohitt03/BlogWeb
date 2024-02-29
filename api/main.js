@@ -57,6 +57,7 @@ app.post('/Blog', async (req, res) => {
     try {
         const Blog = await BlogData.create({
             title: req.body.title,
+            img: req.body.img,
             content: req.body.content,
             author: req.body.author
         });
@@ -76,6 +77,7 @@ app.patch('/Blog/:id', async (req, res) => {
         if (!blogData) return res.status(404).json({ message: `cannot find any product with ID ${id}` })
 
         if (req.body.title) blogData.title = req.body.title;
+        if (req.body.img) blogData.img = req.body.img;
         if (req.body.content) blogData.content = req.body.content;
         if (req.body.author) blogData.author = req.body.author;
 

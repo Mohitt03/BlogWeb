@@ -49,9 +49,9 @@ app.get("/createBlog", async (req, res) => {
   })
 });
 
-app.post("/Blogs", async (req, res) => {
+app.post("/Blog", async (req, res) => {
   try {
-    const response = await axios.post(`${API_URL}/Blogs`, req.body);
+    const response = await axios.post(`${API_URL}/Blog`, req.body);
     // console.log(response.data);
     res.redirect("/");
   } catch (error) {
@@ -80,6 +80,9 @@ app.post("/Blogs", async (req, res) => {
 
 
 // Admin Side
+
+
+
 app.get("/admin", (req, res) => {
   res.render("admin")
 })
@@ -99,11 +102,10 @@ app.get("/blog", async (req, res) => {
 app.get("/edit/:id", async (req, res) => {
   try {
     const response = await axios.get(`${API_URL}/Blog/${req.params.id}`);
-    // console.log(response.data);
     res.render("createBlog", {
-      heading: "Edit BlogBlog",
+      heading: "Edit Blog",
       submit: "Update Blog",
-      blog: response.data,
+      Blogs: response.data,
     });
   } catch (error) {
     res.status(500).json({ message: error });

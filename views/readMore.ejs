@@ -1,13 +1,26 @@
-<ul id="postsList">
-    <% if (locals.post) { %>
-        <h2>
-            <%=post.title%>
-        </h2>
-        <h4>
-            <%=post.content%>
-        </h4>
-        <small>
-            Author: <%=post.author%>
-
-        </small>
-        <% } %>
+<link rel="stylesheet" href="/css/main.css">
+<section class="blogsec">
+    <ul id="postsList">
+        <% if (locals.blog) { %>
+            <div class="OuterBlog">
+                <div class="HeadDiv">
+                    <h2 class="blogHead">
+                        <%=blog.title%>
+                    </h2>
+                </div>
+                <div class="ImgDiv">
+                    <img class="blogImg" src="<%=blog.img%>" alt="Sc1.png">
+                </div>
+                <div class="ContentDiv">
+                    <p class="blogContent">
+                        <%=blog.content%>
+                    </p>
+                </div>
+                <div class="FooterDiv">
+                    <small class="blogFooter">
+                        Author: <%=blog.author%>
+                    </small>
+                </div>
+            </div>
+            <% } %>
+</section>

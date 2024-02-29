@@ -54,12 +54,12 @@
 
     <section>
         <div class="container">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 centre">
+            <div class="row ">
                 <% Blogs.forEach(blog=> { %>
-                    <a class="mainLink a" href="/readMore/<%=blog._id%>">
+                    <a class="mainLink a col-md-4 col-sm-6 col-xs-12 mb-40" href="/readMore/<%=blog._id%>">
                         <div class="col">
                             <div class="img_sec">
-                                <img class="img1" src="../images/Sc1.png" alt="Sc1.png">
+                                <img class="img1" src="<%=blog.img%>" alt="Sc1.png">
                             </div>
                             <div class="txt_sec">
                                 <div class="div-content">
