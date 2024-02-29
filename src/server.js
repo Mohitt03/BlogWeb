@@ -4,6 +4,7 @@ const ejs = require("ejs");
 const mongoose = require("mongoose");
 axios = require("axios")
 passportLocalMongoose = require("passport-local-mongoose")
+var port = "3000"
 
 
 
@@ -141,6 +142,6 @@ app.get("/api/blog/delete/:id", async (req, res) => {
 
 
 
-app.listen(process.env.PORT || 3000, function () {
-  console.log("Server started on port 3000");
+app.listen(process.env.PORT || port, () => {
+  console.log("Listening on port 3000");
 });
