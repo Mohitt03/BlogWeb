@@ -108,7 +108,7 @@ header {
     font-size: 1.5rem;
 }
 
-.navbar .logo {
+.navbar .navlogo {
     gap: 10px;
     display: flex;
     align-items: center;
@@ -413,7 +413,7 @@ span {
 }
 
 .img_sec {
-    margin: 30px 0px;
+    margin-bottom: 22px;
 }
 
 .txt_sec {
@@ -430,8 +430,10 @@ span {
 
 
 /* Readmore Page */
-/* .blogsec {
-} */
+.blogsec {
+    margin: 40px 0px;
+
+}
 
 #postsList {
     display: flex;
@@ -450,7 +452,8 @@ span {
 .ImgDiv {
     margin: 50px 0px;
 }
-.blogImg{
+
+.blogImg {
     width: 100%;
     max-height: 288px;
     height: auto !important;
@@ -471,6 +474,256 @@ span {
     font-size: large;
 }
 
+
+/* About page */
+
+
+.h1-about {
+    position: relative;
+    left: 1px;
+    top: 130px;
+    margin-top: 50px;
+    font-size: 56px;
+    color: rgb(207 166 204);
+    text-align: center;
+    margin-bottom: -27px;
+}
+
+.about {
+    margin-top: -95px;
+    margin-bottom: 50px;
+}
+
+.about-mar {
+    margin-top: 240px;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-div {
+    background-color: gray;
+    border-radius: 7px;
+    width: 400px;
+    height: 363px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.prof-img {
+    width: auto;
+    height: 223px;
+    border-radius: 150px;
+    border: 4px solid;
+}
+
+.profile-txt {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-p {
+    margin-left: 76px;
+    width: 652px;
+    font-size: 22px;
+}
+
+.inside-content {
+    font-size: 40px;
+}
+
+
+
+
+/* Contact Page */
+.contact {
+    padding-bottom: 150px;
+}
+
+.contact-h1 {
+    margin-top: 50px;
+    font-size: 56px;
+    color: rgb(207 166 204);
+    text-align: center;
+}
+
+.contact-inner {
+    margin-top: 64px;
+    display: flex;
+    justify-content: center;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.lb {
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+}
+
+.input {
+    border: 0;
+    outline: 0;
+    background: #d2d2d2;
+    padding: 14px 16px;
+    font-family: Poppins, sans-serif;
+    border-radius: 3px;
+    overflow: hidden;
+    box-sizing: border-box;
+    color: #252525;
+    width: 100%;
+    margin-top: 1px;
+    margin-bottom: 15px;
+}
+
+.submit {
+    color: white;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    height: 45px;
+    background-color: grey;
+    border: none;
+    /* transition: background .35s ease-in-out,color .35s ease-in-out; */
+
+}
+
+.submit:hover {
+    background-color: rgb(21 63 145);
+}
+
+/* footer */
+
+.footer-ul {
+    list-style-type: none;
+    /* Remove bullets */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 72px;
+}
+
+.footer-a {
+    font-size: 12px;
+    opacity: .5;
+    font-weight: 700;
+    transition: opacity .3s cubic-bezier(.645, .045, .355, 1);
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: gray;
+    margin-right: 45px;
+}
+
+.f {
+    position: relative;
+    top: -7px;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+
+.header {
+    height: 65px;
+}
+
+
+
+
+/* Main home page footer */
+
+.footer {
+    padding: 30px 0px;
+    font-family: 'Play', sans-serif;
+    text-align: center;
+}
+
+.logo {
+    width: 25px;
+}
+
+.logo4 {
+    width: 25px;
+
+}
+
+.footer .row {
+    display: block;
+    width: 100%;
+    margin: 1% 0%;
+    padding: 0.6% 0%;
+    color: gray;
+    font-size: 0.8em;
+}
+
+.footer .row a {
+    text-decoration: none;
+    color: gray;
+    transition: 0.5s;
+}
+
+.footer .row a:hover {
+    color: #fff;
+}
+
+.footer .row ul {
+    width: 100%;
+}
+
+.footer .row ul li {
+    display: inline-block;
+    margin: 0px 30px;
+}
+
+.footer .row a i {
+    font-size: 2em;
+    margin: 0% 1%;
+}
+
+@media (max-width:720px) {
+    .footer {
+        text-align: left;
+        padding: 5%;
+    }
+
+    .footer .row ul li {
+        display: block;
+        margin: 10px 0px;
+        text-align: left;
+    }
+
+    .footer .row a i {
+        margin: 0% 3%;
+    }
+}
+
+
+
+
+
+
+
+
 /* Responsive Section */
 
 
@@ -483,7 +736,7 @@ span {
 @media (max-width: 989px) {
     .OuterBlog {
         width: 100%;
-        padding: 20px 109px;    
+        padding: 20px 70px;
     }
 }
 

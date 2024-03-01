@@ -4,20 +4,27 @@ const ejs = require("ejs");
 const mongoose = require("mongoose");
 axios = require("axios")
 passportLocalMongoose = require("passport-local-mongoose")
-var port = "3000"
+const fs = require('fs');
 
+var port = "3000"
+var http = require('http')
+var path = require('path')
+var nodemailer = require('nodemailer')
 
 
 const app = express();
+const server = http.Server(app)
 const Blog = require('../models/Blog');
 const API_URL = "http://localhost:6000"
 
 mongoose.set('strictQuery', true)
 mongoose.connect("mongodb://localhost:27017");
 
-
+app.set("port", port)
 app.set('view engine', 'ejs');
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, "views/contact.ejs")));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
@@ -28,6 +35,13 @@ app.use(express.static("public"));
 app.get("/", async (req, res) => {
   const response = await axios.get(`${API_URL}/Blog/?key=123456789`);
   res.render("home", { Blogs: response.data })
+})
+app.get("/about", async (req, res) => {
+  res.render("about")
+})
+
+app.get("/contact", async (req, res) => {
+  res.render("contact")
 })
 
 // Read more page
@@ -54,28 +68,17 @@ app.post("/Blog", async (req, res) => {
   try {
     const response = await axios.post(`${API_URL}/Blog`, req.body);
     // console.log(response.data);
-    res.redirect("/");
+    res.redirect("/blog");
   } catch (error) {
     res.status(500).json({ message: "error" });
   }
 })
 
+// Contact page
 
 
-// app.get("/favicon.ico", (req, res) => { });
 
-// app.get("/posts/:postId", function (req, res) {
-//   const requestedId = req.params.postId;
 
-//   Post.findOne({ _id: requestedId }, (err, result) => {
-//     if (!err) {
-//       res.render("post", { title: result.title, content: result.content });
-//     }
-//     else {
-
-//     }
-//   })
-// });
 
 
 

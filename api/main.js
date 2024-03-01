@@ -59,7 +59,8 @@ app.post('/Blog', async (req, res) => {
             title: req.body.title,
             img: req.body.img,
             content: req.body.content,
-            author: req.body.author
+            author: req.body.author,
+            date: req.body.date
         });
         // res.redirect("/products");
         res.status(201).json(Blog);
@@ -80,6 +81,7 @@ app.patch('/Blog/:id', async (req, res) => {
         if (req.body.img) blogData.img = req.body.img;
         if (req.body.content) blogData.content = req.body.content;
         if (req.body.author) blogData.author = req.body.author;
+        if (req.body.date) blogData.date = req.body.date;
 
         res.status(200).json(blogData);
 

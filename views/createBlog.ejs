@@ -19,6 +19,7 @@
                 <input type="text" name="img" value="<%=Blogs.img %>">
                 <textarea name="content" rows="10"><%=Blogs.content %></textarea>
                 <input type="text" name="author" value="<%=Blogs.author %>">
+                <input type="text" name="date" value="<%=Blogs.date %>">
                 <button class="full-width" type="submit">
                     <%= submit %>
                 </button>
@@ -29,6 +30,8 @@
                     <input type="text" name="img" placeholder="Img src">
                     <textarea name="content" placeholder="Content" required rows="10"></textarea>
                     <input type="text" name="author" placeholder="Author" required>
+                    <input type="text" name="date" placeholder="Today's Date" required>
+            
                     <button class="full-width" type="submit">
                         <%= submit %>
                     </button>
