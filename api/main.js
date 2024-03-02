@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 
 
 const BlogData = require('../models/Blog')
+const MessageData = require('../models/Message')
 
 const app = express()
 const masterKey = "123456789"
@@ -119,6 +120,93 @@ app.delete('/Blog/:id', async (req, res) => {
 
 })
 
+
+
+// Contact Page ,Customer message
+
+
+app.get('/Message', async (req, res) => {
+    const userKey = (req.query.key)
+    if (userKey === masterKey) {
+        try {
+            const messageData = await MessageData.find();
+            res.status(200).json(messageData);
+        } catch (error) {
+            res.status(500).json({ message: error.message })
+        }
+    }
+    else {
+        res
+            .status(404)
+            .json({ error: "You are not authorized" })
+    }
+
+})
+// app.get('/Blog/:id', async (req, res) => {
+//     try {
+//         const { id } = req.params;
+//         const blogData = await BlogData.findById(id);
+//         res.status(200).json(blogData);
+//     } catch (error) {
+//         res.status(500).json({ message: error.message })
+//     }
+
+// })
+
+app.get('/Data/:id', async (req, res) => {
+    try {
+        const { id } = req.params;
+        const blogData = await BlogData.findById(id);
+        res.status(200).json(blogData);
+    } catch (error) {
+        res.status(500).json({ message: error.message })
+    }
+})
+
+
+app.post('/Message', async (req, res) => {
+    try {
+        const Message = await MessageData.create({
+            name: req.body.name,
+            email: req.body.email,
+            message: req.body.message
+        });
+        // res.redirect("/products");
+        res.status(201).json(Message);
+    } catch (error) {
+        console.log(error);
+    }
+})
+
+
+
+// delete a product ,Customer message
+
+app.delete('/Message/:id', async (req, res) => {
+    const userKey = (req.query.key)
+    if (userKey === masterKey) {
+
+        try {
+            const userKey = (req.query.key)
+            const { id } = req.params;
+            const messageData = await MessageData.findByIdAndDelete(id);
+            if (!messageData) {
+                return res.status(404).json({ message: `cannot find any Parking Data with ID ${id}` })
+            }
+            res.status(200).json(messageData);
+
+        }
+        catch (error) {
+            res.status(500).json({ message: error.message })
+        }
+    }
+    else {
+        res
+            .status(404)
+            .json({ error: "You are not authorized" })
+    }
+
+})
 
 mongoose.set("strictQuery", false)
 mongoose.

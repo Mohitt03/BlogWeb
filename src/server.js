@@ -44,6 +44,11 @@ app.get("/contact", async (req, res) => {
   res.render("contact")
 })
 
+app.get("/sign", async (req, res) => {
+  res.render("sign")
+})
+
+
 // Read more page
 app.get("/readMore/:id", async (req, res) => {
   try {
@@ -78,7 +83,15 @@ app.post("/Blog", async (req, res) => {
 
 
 
-
+app.post("/Contact", async (req, res) => {
+  try {
+    const response = await axios.post(`${API_URL}/Message`, req.body);
+    // console.log(response.data);
+    res.redirect("/Contact");
+  } catch (error) {
+    res.status(500).json({ message: "error" });
+  }
+})
 
 
 
@@ -143,6 +156,27 @@ app.get("/api/blog/delete/:id", async (req, res) => {
 // })
 
 
+// User message
+
+app.get("/message", async (req, res) => {
+  try {
+    const response = await axios.get(`${API_URL}/Message/?key=123456789`)
+    res.render("message", { datas: response.data })
+  } catch (error) {
+    res.status(500).json({ message: "error" });
+
+  }
+})
+
+
+app.get("/api/message/delete/:id", async (req, res) => {
+  try {
+    await axios.delete(`${API_URL}/Message/${req.params.id}/?key=123456789`);
+    res.redirect("/message");
+  } catch (error) {
+    res.json({ message: "Error deleting Message" });
+  }
+});
 
 
 app.listen(process.env.PORT || port, () => {

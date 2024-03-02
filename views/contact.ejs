@@ -49,17 +49,12 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
 </header>
 
 
-
-
-
-
-
 <section id="Contact" class="contact">
     <h1 class="contact-h1">Contact Me<w class="fullStop">.</w>
     </h1>
     <div class="contact-inner">
         <div class="s">
-            <form class="form" action="/send_email"   method="POST">
+            <form class="form" action="/Contact"   method="POST">
                 <!-- <label class="lb">NAME:</label> -->
                 <input class="input" name="name" id="name" type="text" placeholder="Enter your name here">
 
@@ -79,23 +74,33 @@ integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2
 </section>
 
 
-<script src="https://smtpjs.com/v3/smtp.js"></script>
+<footer>
+    <div class="footer">
+        <div class="row">
+            <a href=""><img class="logo logo1" src="/images/facebook (1).png" alt="" srcset=""></a>
+            <a href=""><img class="logo logo2" src="/images/instagram (1).png" alt="" srcset=""></a>
+            <a href=""><img class="logo logo3" src="/images/twitter (1).png" alt="" srcset=""></a>
+            <!-- <a href=""><img class="logo logo4" src="images/youtube.png" alt="" srcset=""></a> -->
 
-<script>
-    function sendEmail() {
-        Email.send({
-            Host: "smtp.gmail.com",
-            Username: "mohitnagpure56@gmail.com",
-            Password: "Stpi6570m0hit$",
-            To: 'mohitnapure@gmail.com',
-            From: document.getElementById("email").value,
-            Subject: "New contact form enquiry",
-            Body: "And this is the body"
-        }).then(
-            message => alert(message)
-        );
-    }
-</script>
+
+
+
+        </div>
+
+        <div class="row">
+            <ul>
+                <li><a href="/Contact">Contact us</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+            </ul>
+        </div>
+
+        <div class="row">
+            Copyright © 2021 - All rights reserved
+        </div>
+    </div>
+</footer>
 
 <script>
     const header = document.querySelector("header");
