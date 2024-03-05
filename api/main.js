@@ -210,7 +210,7 @@ app.delete('/Message/:id', async (req, res) => {
 
 mongoose.set("strictQuery", false)
 mongoose.
-    connect('mongodb://localhost:27017')
+    connect('mongodb+srv://admin:1234@api.w1sen0x.mongodb.net/?retryWrites=true&w=majority')
     .then(() => {
         console.log('connected to MongoDB')
         app.listen(process.env.PORT || port, () => {
