@@ -18,7 +18,7 @@ const Blog = require('../models/Blog');
 const API_URL = "http://localhost:6000"
 
 mongoose.set('strictQuery', true)
-mongoose.connect("mongodb://localhost:27017");
+mongoose.connect("mongodb+srv://admin:1234@api.w1sen0x.mongodb.net/?retryWrites=true&w=majority");
 
 app.set("port", port)
 app.set('view engine', 'ejs');

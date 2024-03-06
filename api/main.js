@@ -20,7 +20,7 @@ app.get('/Blog', async (req, res) => {
     if (userKey === masterKey) {
         try {
             const blogData = await BlogData.find();
-            res.status(200).json(blogData);``
+            res.status(200).json(blogData); ``
         } catch (error) {
             res.status(500).json({ message: error.message })
         }
