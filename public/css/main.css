@@ -100,8 +100,10 @@ header {
     margin: 0 auto;
     justify-content: space-between;
 }
-
-.navbar .hamburger-btn {
+.nav{
+    padding: 0px;
+}
+.n0pxvbar .hamburger-btn {
     display: none;
     color: #090909;
     cursor: pointer;
@@ -340,6 +342,9 @@ span {
 
 /* Section 1 */
 
+.main_sec{
+    padding: 100px 0px;
+}
 
 .postsList {
     list-style: none;
@@ -429,7 +434,7 @@ span {
 /* Readmore Page */
 .blogsec {
     margin: 40px 0px;
-
+    padding-bottom: 175px;
 }
 
 #postsList {
@@ -545,9 +550,6 @@ span {
 
 
 /* Contact Page */
-.contact {
-    padding-bottom: 150px;
-}
 
 .contact-h1 {
     margin-top: 50px;
@@ -612,7 +614,10 @@ span {
     background-color: rgb(21 63 145);
 }
 
+
 /* footer */
+
+.alogo{}
 
 .footer-ul {
     list-style-type: none;
