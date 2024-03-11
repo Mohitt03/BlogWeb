@@ -3,7 +3,6 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
 axios = require("axios")
-passportLocalMongoose = require("passport-local-mongoose")
 const fs = require('fs');
 
 var port = "3000"

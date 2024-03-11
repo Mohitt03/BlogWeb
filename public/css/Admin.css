@@ -2,6 +2,36 @@ body {
     font-family: sans-serif;
 }
 
+
+/* Admin Page */
+
+.Admin_Sec_1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+.Abtn {
+    padding: 13px 39px;
+    background-color: aliceblue;
+    text-decoration: none;
+    color: darkgoldenrod;
+    transition: 1s;
+}
+
+.Abtn:hover{
+    background-color: black;
+    border-radius: 50px;
+}
+
+
+
+
+
+
+/* Blog Data Page */
 table,
 th,
 td {
@@ -18,7 +48,8 @@ td {
     max-width: 217px;
     overflow-x: scroll;
 }
-tr{
+
+tr {
     max-height: 100px;
     overflow-y: scroll;
 
@@ -35,7 +66,8 @@ tr{
     height: auto;
     overflow: scroll;
 }
-.breif{
+
+.breif {
     height: 44px;
     overflow-y: hidden;
     width: 243px;

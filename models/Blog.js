@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-// const passportLocalMongoose = require('passport-local-mongoose');
 const blog = mongoose.Schema({
     title: {
         type: String,
@@ -29,6 +28,5 @@ const blog = mongoose.Schema({
     }
 )
 
-// blog.plugin(passportLocalMongoose);  
 
-module.exports = mongoose.model('postSchema', blog)   
+module.exports = mongoose.model('blogs', blog)   

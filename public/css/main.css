@@ -100,9 +100,11 @@ header {
     margin: 0 auto;
     justify-content: space-between;
 }
-.nav{
+
+.nav {
     padding: 0px;
 }
+
 .n0pxvbar .hamburger-btn {
     display: none;
     color: #090909;
@@ -342,7 +344,7 @@ span {
 
 /* Section 1 */
 
-.main_sec{
+.main_sec {
     padding: 100px 0px;
 }
 
@@ -415,6 +417,8 @@ span {
 }
 
 .img_sec {
+    max-height: 159px;
+    overflow: hidden;
     margin-bottom: 22px;
 }
 
@@ -459,7 +463,6 @@ span {
 
 .blogImg {
     width: 100%;
-    max-height: 288px;
     height: auto !important;
     object-fit: cover;
     display: block;
@@ -617,7 +620,7 @@ span {
 
 /* footer */
 
-.alogo{}
+.alogo {}
 
 .footer-ul {
     list-style-type: none;
