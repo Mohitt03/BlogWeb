@@ -12,6 +12,7 @@
     font-family: 'Fira Sans', sans-serif;
 }
 
+.main_sec {}
 
 
 
@@ -80,7 +81,7 @@
 body {
     height: 100vh;
     width: 100%;
-    background: url("pxfuel.jpg") center/cover no-repeat;
+    /* background: url("pxfuel.jpg") center/cover no-repeat; */
     background-color: aliceblue
 }
 
@@ -90,6 +91,8 @@ header {
     left: 0;
     z-index: 10;
     padding: 0 10px;
+    background-image: url("../images/istockphoto-1397153369-170667a.webp");
+
 }
 
 .navbar {
@@ -117,6 +120,9 @@ header {
     display: flex;
     align-items: center;
     text-decoration: none;
+    /* font-weight: 800; */
+    color: orangered;
+    font-size: 34px;
 }
 
 .navbar .logo img {
@@ -159,9 +165,10 @@ header {
 }
 
 .navbar .login-btn {
+    color: white;
     border: none;
     outline: none;
-    font-size: 11px;
+    font-size: 17px;
     font-weight: 600;
     padding: 10px 5px;
 }
@@ -230,10 +237,15 @@ header .navbar {
 
 .navbar .menu-links li a {
     color: rgba(0, 0, 0, 0.864);
-    font-weight: 400;
-    font-size: 15px;
+    font-size: 17px;
+    font-weight: 800;
     text-decoration: none;
     transition: 0.2s ease;
+}
+
+.alast {
+    padding: 5px;
+    background-color: orangered;
 }
 
 .navbar .menu-links .language-item a {
@@ -309,7 +321,7 @@ header .navbar {
 }
 
 .b:hover {
-    background: #53e60f;
+    background: orangered;
 }
 
 .btn2 {
@@ -318,10 +330,12 @@ header .navbar {
 }
 
 .nav-btn1 {
-    width: 65px;
+    width: 104px;
     height: 40px;
     color: #6f9730;
-    background-color: white;
+    background-color: black;
+    color: white;
+    border: none;
 }
 
 .nav-btn2 {
@@ -346,6 +360,8 @@ span {
 
 .main_sec {
     padding: 100px 0px;
+    background-image: url("../images/istockphoto-1397153369-170667a.webp");
+    /* background-repeat: cover; */
 }
 
 .postsList {
@@ -389,12 +405,16 @@ span {
 }
 
 .author {
+    color: black;
+    font-weight: 900;
     width: 50%;
     font-size: small;
     text-align: left;
 }
 
 .date {
+    color: orangered;
+    font-weight: 900;
     width: 50%;
     font-size: small;
     text-align: right;
@@ -406,6 +426,10 @@ span {
     text-decoration: none;
     color: black;
     box-shadow: 0 3px 5px -1px rgba(0, 0, 0, .07), 0 1px 18px rgba(0, 0, 0, .05);
+}
+
+.col {
+    background-color: white;
 }
 
 /* a:visited {
